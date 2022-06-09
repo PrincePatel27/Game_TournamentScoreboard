@@ -1,0 +1,51 @@
+doctype html
+head
+    style 
+        include ./css/styles.css 
+        include ./css/bootstrap.min.css
+        
+nav.navbar.sticky-top.navbar-expand-sm.bg-dark
+    ul.navbar-nav.ml-auto
+        li.nav-item
+            a.nav-link(href='Login') Signin
+        li.nav-item
+            a.nav-link(href='Signup') Signup  
+.container-fluid.mt-2.bg-light
+    .row.d-flex.justify-content-center.align-items-center.h-50
+        .col-12.col-md-9.col-lg-7.col-xl-6
+            .card(style='border-radius: 15px;')
+                .card-body.p-2
+                    form(action='/signup' method='POST').mb-2.ml-4
+                        h1.form_title.text-uppercase.text-center.mt-2.mb-7 Create an account
+                        .form-outline.mr-4
+                            label.form-label Name
+                            input.form-control(type='text' id='username' value='' name='username' placeholder='Username')
+                            .form_input-error-message
+                            br
+                        .form-outline.mr-4
+                            label.form-label Email address
+                            input.form-control(type='text' id='email' value='' name='email' placeholder='Email')
+                            .form_input-error-message
+                            br
+                        .form-outline.mr-4
+                            label.form-label Date of Birth
+                            input.form-control(type='date' id='date_of_birth' value='' name='date_of_birth' placeholder='Date of Birth')
+                            .form_input-error-message
+                            br
+                        .form-outline.mr-4
+                            label.form-label Password
+                            input.form-control(type='password' id='password' name='password' value='' placeholder='Password')
+                            .form_input-error-message
+                            br
+                        .form-outline.mr-4
+                            label.form-label Confirm Password
+                            input.form-control(type='password' name='confirmPassword' value='' placeholder='Confirm password')
+                            .form_input-error-message
+                            br
+                        .d-flex.justify-content-center.mr-4
+                            button.btn.btn-secondary.btn-block.btn-lg.gradient-custom-4.text-body(type='Submit') Register
+                        p.text-center.text-muted.mt-3.mb-0 Have already an account? 
+                            a.fw-bold.text-body(href='Login')
+                                u Signin here
+
+            script(src='views/js/main.js')

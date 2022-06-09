@@ -1,0 +1,43 @@
+doctype html 
+head 
+    style  
+        include ./css/styles.css
+        include ./css/bootstrap.min.css 
+#wrapper.d-flex
+    .container-fluid   
+        // Page content wrapper
+        #page-content-wrapper
+        // Top navigation 
+        nav.navbar.navbar-expand-sm.bg-dark
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                    a.nav-link(href='Login') Signin
+                li.nav-item
+                    a.nav-link(href='Signup') Signup
+.container.mt-5.bg-light
+    .row.d-flex.justify-content-center.align-items-center.h-50
+        .col-12.col-md-9.col-lg-7.col-xl-6
+            .card(style='border-radius: 15px;')
+                .card-body.p-2
+                    form(action='/Login' method='POST').mb-2.ml-4 
+                        h3.form_title.bg-fade.text-uppercase.text-center.mb-7 Game Tournament
+                        .form-outline.mr-4
+                            label.form-label Email
+                            input.form-control(type='text' name='email' value='' placeholder='Email')
+                            .form_input-error-message
+                            br 
+                        .form-outline.mr-4
+                            label.form-label Password
+                            input.form-control(type='password' id='password' name='password' value='' placeholder='Password')
+                            .form_input-error-message
+                            br   
+                        p.justify-content-center
+                            a.fw-bold.text-body(href='forgot')
+                                u Forgot Password?
+                        .d-flex.justify-content-center.mr-4
+                            button.btn.btn-secondary.btn-block.btn-lg.gradient-custom-4.text-body(type='submit') Login
+                        br
+                        p.justify-content-center 
+                            a.fw-bold.text-body(href='signup')
+                                u Create an Account
+                script(src='views/js/main.js')
